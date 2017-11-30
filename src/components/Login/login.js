@@ -6,23 +6,22 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Image, Text, KeyboardAvoidingView, Animated} from 'react-native';
 import LoginForm from './loginform';
 
-export default class login extends Component {
+export default class login extends Component{
 
     state = {
         fadeAnim: new Animated.Value(0),
-    }
+    };
 
-    componentDidMount() {
+    componentDidMount = () => {
         Animated.timing(this.state.fadeAnim, {
             toValue: 1, duration: 5000,
         }).start();
-    }
+    };
 
     render() {
-
         return (
-            <KeyboardAvoidingView behavior="padding" style = {styles.container}>
-                <View style = {styles.logoContainer}>
+            <KeyboardAvoidingView behavior="padding" style={styles.container}>
+                <View style={styles.logoContainer}>
                     <Image style={styles.logo} source={require('../../images/logo.png')}/>
 
                     <Text style={ styles.loginText}>
@@ -30,7 +29,7 @@ export default class login extends Component {
                     </Text>
                 </View>
 
-                <View style = {styles.inputContainer}>
+                <View style={styles.inputContainer}>
                     <LoginForm/>
                 </View>
             </KeyboardAvoidingView>
@@ -41,7 +40,7 @@ export default class login extends Component {
 const styles = StyleSheet.create({
    container: {
        flex: 1,
-       backgroundColor: '#003d75'
+       backgroundColor: '#1c496d'
    },
    logo: {
        width:240,
